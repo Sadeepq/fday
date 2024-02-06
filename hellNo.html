@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio and Video Player</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #myVideo {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio" autoplay>
+        <source src="cars.mp3" type="audio/mpeg">
+        
+    </audio>
+
+    <video id="video" autoplay loop>
+        <source src="peace.mp4" type="video/mp4">
+        
+    </video>
+
+    <script>
+        // Get references to the audio and video elements
+        var audio = document.getElementById("audio");
+        var video = document.getElementById("video");
+
+        // When the audio ends, start playing the video
+        audio.onended = function() {
+            video.play();
+        };
+    </script>
+</body>
+</html>
